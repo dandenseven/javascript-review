@@ -149,3 +149,73 @@ console.log(ourStr)
 var myName = "Beau";
 var myStr = "My name is "+ myName + " and I am well.";
 console.log(myStr)
+
+
+// Appending variables to string
+
+var anAdjective = "awesome!";
+var ourStr = "freeCodeCamp is ";
+ourStr += anAdjective;
+
+var someAdjective = "worthwile";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
+console.log(myStr)
+
+// string length
+
+var firstNameLength = 0;
+var firstName = "Ada";
+
+firstNameLength = firstName.length;
+console.log(firstNameLength)
+console.log(firstName.length)
+
+var lastNameLentgh = 0;
+var lastName = "Lovelace";
+
+lastNameLentgh = lastName.length;
+console.log(lastNameLentgh)
+
+// Bracet Notation to Find First Character in String
+
+var firstLetterOfFirstName = "";
+var firstName = "Ada"
+
+firstLetterOfFirstName = firstName[0];
+console.log(firstLetterOfFirstName)
+
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+firstLetterOfLastName = lastName[4];
+console.log(firstLetterOfLastName)
+
+// string immutability
+var myStr = "Jello World";
+
+//Bracket Notation to Find last character in string
+
+var firstName = "Ada";
+var lastLetterOfFirstName = firstName[firstName.length - 1];
+console.log(lastLetterOfFirstName)
+
+var lastName = "Lovelace";
+
+var lastLetterOfLastName = lastName[lastName.length - 1];
+console.log(lastLetterOfLastName)
+
+var lastLetterOfLastName = lastName[lastName.length - 3];
+console.log(lastLetterOfLastName)
+
+// Word Banks
+function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+
+    var result = "";
+    result += "The " + myAdjective + " " + myNoun + " " + myVerb + " to ther store " + myAdverb
+    return result;
+}
+
+console.log(wordBlanks("dog", "big", "ran", "quickly"));
+console.log(wordBlanks("bike", "slow", "flew", "slowly"));
+
