@@ -188,7 +188,7 @@ console.log(firstLetterOfFirstName)
 var firstLetterOfLastName = "";
 var lastName = "Lovelace";
 
-firstLetterOfLastName = lastName[4];
+firstLetterOfLastName = lastName[0];
 console.log(firstLetterOfLastName)
 
 // string immutability
@@ -218,4 +218,100 @@ function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
 
 console.log(wordBlanks("dog", "big", "ran", "quickly"));
 console.log(wordBlanks("bike", "slow", "flew", "slowly"));
+
+// Storing Multiple Values with Arrays
+var ourArray = ["JOhn", 23];
+
+var myArray = ["Quincy", 1];
+console.log(myArray)
+
+// Nested Arrays
+
+var ourArray = [["the unoverse", 42], ["everythin", 101010]];
+
+var myArray = [["BUlls", 23], ["White Sox", 6]];
+
+//Access Data in Array
+
+var ourArray = [50,60,70];
+var ourData = ourArray[0];
+
+console.log(ourData)
+
+// Modify Array Data with Indexes
+
+var ourArray = [18,64,99];
+ourArray[1] = 45; // ourArray now equals [18,45,99].
+
+var myArray = [20,57,87];
+myArray[0] = 36;
+console.log(myArray)
+
+// Access Multi -Dimensional array with Indexes
+var myArray = [[1,2,3],[4,5,6],[7,8,9],[[10,11,12], 13, 14]];
+
+//the firts bracket points to the first position and the next bracket point to the index in the first postion.
+var myData = myArray[0][0];
+console.log(myData)
+var myData = myArray[2][1];
+console.log(myData)
+
+//Multiple Array with Push
+var ourArray = ["Stimpson", "J", "cat"];
+ourArray.push(["happy", "joy"]);
+console.log(ourArray)
+
+var myArray = [["John", 23], ["cat, 2"]];
+myArray.push(["dog", 3]);
+console.log(myArray)
+
+// Multiple Arrays with pop()
+var ourArray = [1,2,3];
+var removedFromOurArray = ourArray.pop();
+// removedFromOurArray now equals 3, and ourArray now equals [1,2]
+
+var myArray = [["John", 23], ["cat", 2]];
+var renovedFromMyArray = myArray.pop();
+console.log(renovedFromMyArray)
+
+console.log(myArray)
+
+//Manipulate Arrays with shift(), removed the first element
+var ourArray = ["Stimpson", "J", ["cat"]];
+var removedFromOurArray = ourArray.shift();
+
+var myArray = [["john", 23], ["dog", 3]];
+
+var removedFromMyArray = myArray.shift();
+console.log(removedFromMyArray)
+
+console.log(myArray)
+
+//Manipulate Arrays with unshift, adds an element to the beginning of an array
+var ourArray = ["Stimpson", "j", "cat"];
+ourArray.shift();
+ourArray.unshift("Happy");
+
+var myArray = [["john", 23], ["dog", 3]];
+myArray.shift();
+
+myArray.unshift(["Paul", 35]);
+
+//shoppping list
+var myList = [["cereal", 3], ["milk"], ["bananas", 3], ["eggs", 12]];
+
+// writing reusable functions
+function ourReusableFunction() {
+    console.log("Heyya, World")
+}
+
+ourReusableFunction();
+
+
+function reusableFunction() {
+    console.log("Hi World");
+}
+
+reusableFunction();
+
 
