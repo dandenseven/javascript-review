@@ -220,7 +220,7 @@ console.log(wordBlanks("dog", "big", "ran", "quickly"));
 console.log(wordBlanks("bike", "slow", "flew", "slowly"));
 
 // Storing Multiple Values with Arrays
-var ourArray = ["JOhn", 23];
+var ourArray = ["John", 23];
 
 var myArray = ["Quincy", 1];
 console.log(myArray)
@@ -547,5 +547,132 @@ function testLessThan(val) {
 
 console.log(testLessThan(10));
 
-// Comparisons with the Logical "Or" Operator
+// Comparisons with the Logical "And" & "Or" Operator
+// And operator in Javascript is &&
+// Or operator in Javascript is ||
+
+function testLogicalAnd(val) {
+    if (val <= 50 && val >= 25) {
+        return "Yes";
+    }
+    return "No";
+}
+
+console.log(testLogicalAnd(15));
+
+
+function testLogicalOr(val) {
+    if (val < 10 || val > 20) {
+        return "Outside";
+    }
+
+    return "Inside";
+}
+
+console.log(testLogicalOr(15));
+
+
+// Else Statements and ElseIf
+
+function testElse(val) {
+    var result = "";
+
+    if (val > 5) {
+        result = "Bigger than 5";
+    } else {
+
+        result = "5 or smaller";
+    }
+    return result;
+}
+
+testElse(10);
+
+function testElseIf(val) {
+    if (val > 10) {
+        return "Greater than 10";
+    }   else if (val < 5) {
+        return "Smaller than 5";
+    }   else {
+        return "Between 5 and 10";
+    }
+}
+
+testElseIf(7);
+
+console.log(testElseIf(7));
+
+
+// Logical Order in If Else Statements
+
+function orderMyLogic(val) {
+    if (val < 5) {
+        return "Less than 5";
+    } else if (val < 10) {
+        return "Less than 10";
+    } else {
+        return "Greater than or equal to  10";
+    }
+}
+
+console.log(orderMyLogic(3));
+
+// Chaining If Else Satements
+
+/*
+Write chained if/else if statements to fulfill the following conditions:
+num < 5 - return "Tiny"
+num < 10 - return "Small"
+num < 15 - return "Medium"
+num < 20 - return "Large"
+num >= 20 - return "Huge"
+*/
+
+function testSize(num) {
+    if (num < 5) {
+        return "Tiny"
+    }   else if (num < 10) {
+        return "Small"
+    }   else if (num < 15) {
+        return "Medium"
+    }   else if (num < 20) {
+        return "Large"
+    }   else {
+        return "Huge"
+    }
+        
+}
+
+console.log(testSize(20));
+
+//Golf Code
+var names = ["Hole-in-one", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home"]
+
+function golfScore(par, strokes) {
+    if (strokes == 1) {
+        return names[0];
+    }   else if (strokes <= par - 2 ) {
+        return names[1];
+    }   else if (strokes <= par - 1 ) {
+        return names[2];
+    }   else if (strokes <= par) {
+        return names[3];
+    }   else if (strokes <= par + 1 ) {
+        return names[4];
+    }   else if (strokes <= par + 2 ) {
+        return names[5];
+    }   else if (strokes <= par + 3 ) {
+        return names[6];
+    }
+    
+}
+
+console.log(golfScore(5, 8));
+
+// Switch Statements
+
+function caseInSwitch(val) {
+    var answer = "";
+}
+
 
