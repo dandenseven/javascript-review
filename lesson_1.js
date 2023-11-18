@@ -857,7 +857,7 @@ var myDog = {
     "friends": []
 
 
-}
+};
 
 // Javascript Dot Notation
 
@@ -882,3 +882,37 @@ var entreeValue = testObj["an entree"];
 var drinkValue = testObj["the drink"];
 
 // Accessing Object Properties with Variables
+
+var testObj = {
+    12: "Namath",
+    16: "Monatana",
+    19: "Unitas"
+};
+
+var playerNumber = 16;
+var player = testObj[playerNumber];
+
+//Updating Object Properties
+
+var ourDog = {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything"]
+};
+
+ourDog.name = "Happy Camper";
+
+var myDog = {
+    "name": "Quincy",
+    "legs": 3,
+    "tails": 2,
+    "friends": ["freeCodeCamp Campers"]
+
+};
+
+myDog.name = "Happy Coder";
+
+// Add New Properties to an Object
+
+
