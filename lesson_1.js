@@ -913,6 +913,74 @@ var myDog = {
 
 myDog.name = "Happy Coder";
 
-// Add New Properties to an Object
+// Add New Properties lke name, legs, tails friends and now bark to an Object
+
+
+var ourDog = {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything"]
+};
+
+ourDog.bark = "bow-wow";
+// using dot notation
+
+var myDog = {
+    "name": "Happy Coder",
+    "legs": 4,
+    "tails": 2,
+    "friends": ["freeCodeCamp Campers"]
+
+};
+
+myDog['bark'] = "woof!"
+// using bracket notation
+
+
+// Delete properties From an Object
+
+var ourDog = {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything"],
+    "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+
+var myDog = {
+    "name": "Quincy",
+    "legs": 3,
+    "tails": 2,
+    "friends": ["freeCodeCamp Campers"],
+    "bark": "woof!"
+
+};
+
+delete myDog.tails
+
+// Using Objects for Lookups
+
+function phoneticLookup(val) {
+    var result = "";
+
+    var lookup = {
+        "aplaha": "Adams",
+        "bravo": "Boston",
+        "charlie": "Chicago",
+        "delta": "Denver",
+        "echo": "Easy",
+        "foxtrot": "Frank"
+    };
+    result = lookup[val];
+
+    return result;
+}
+
+console.log(phoneticLookup("charlie"));
+
+// Testing Objects for Properties
 
 
