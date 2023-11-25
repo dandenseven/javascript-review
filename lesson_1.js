@@ -983,4 +983,223 @@ console.log(phoneticLookup("charlie"));
 
 // Testing Objects for Properties
 
+var myObj = {
+    gift: "pony",
+    pet: "kitten",
+    bed: "sleigh"
+};
 
+function checkObj(checkProp) {
+
+   if (myObj.hasOwnProperty(checkProp)) {
+    return myObj[checkProp];
+   } else {
+    return "Not Found"
+   }
+    
+}
+
+console.log(checkObj("pet"));
+//////////////////
+var ourObj = {
+    sample: "perfume",
+    car: "Land Rover",
+    watch: "iwatch"
+};
+
+function checkOurObj(val) {
+    if (ourObj.hasOwnProperty(val)) {
+        return ourObj[val];
+    } else {
+        return "Not Found"
+    }
+}
+
+console.log(checkOurObj("auto"));
+
+// Manipulating Complex Objects 
+// Javascript objects are a way to store flexible data.. strings, number and arrays.
+
+var myMusic = [
+    {
+        "artist": "Billy Joel",
+        "title": "Piano Man",
+        "release_year": 1973,
+        "formats": [
+            "CD",
+            "8T",
+            "LP"
+        ],
+        "gold": true
+    },
+    {
+        "artist": "Beau Carnes",
+        "title": "Cereal Man",
+        "release_year": 2003,
+        "formats": [
+            "YouTubr video"
+        ]
+    }
+]
+
+// Accessing Nested Objects
+
+var myStorage = {
+    "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+    }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"];
+
+console.log(gloveBoxContents)
+
+// Accessing Nested Arrays
+
+var myPlants = [
+    {
+        type: "flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+
+        ]
+    },
+    {
+        type: "trees",
+        list:[
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+
+var secondTree = myPlants[1].list[1];
+
+console.log(secondTree)
+
+// Record Collection
+
+var collection = {
+    "2548": {
+        "album": "Slippery When Wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let it Rock",
+            "You Give Love a Bad Name"
+        ]
+    },
+    "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "Little Red Corvette",
+        ]
+    },
+    "1245": {
+        "artist": "Robert Palmer",
+        "tracks": []
+            
+    },
+    "5439": {
+        "album": "ABBA GOLD"
+    }
+};
+
+
+// Keep a copy of the for the tests
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+
+function updateRecords(id, prop, value) {
+    if (value === "") {
+        delete collection[id][prop];
+    }   else if (prop === "tracks") {
+        collection[id][prop] = collection[id][prop] || []
+        collection[id][prop].push(value);
+    }   else {
+        collection[id][prop] = value;
+    }
+    return collection;
+}
+
+updateRecords(2468, "tracks", "test");
+console.log(updateRecords(5439, "artist", "ABBA"));
+
+// Iterate with While Loops
+
+var myArray = [];
+
+var i = 0;
+while(i < 5) {
+    myArray.push(i);
+    i++;
+}
+
+console.log(myArray);
+
+//Iterate with For Loops
+
+var ourArray = [];
+
+//Initialize i (varible) first, the condition - run the loop, then final expression - increment i
+
+for (var i = 0; i < 5; i++) {
+    ourArray.push(i);
+}
+
+
+var myArray = [];
+
+for (var i = 1; i < 6; i++) {
+    myArray.push(i);
+}
+
+console.log(myArray);
+
+// Iterate ODd Numbers with a For Loop
+
+var ourArray = [];
+
+for (var i = 0; i < 10; i += 2) {
+    ourArray.push(i);
+}
+
+console.log(ourArray);
+
+var myArray = [];
+
+for (var i = 1; i < 10; i +=2) {
+    myArray.push(i);
+}
+
+console.log(myArray)
+
+// Count Backwards with a For Loop
+
+var ourArray = [];
+
+for (var i = 10; i > 0; i -= 2) {
+    ourArray.push(i);
+
+}
+
+console.log(ourArray);
+
+var myArray = [];
+
+for (var i = 9; i > 0; i -= 2) {
+    myArray.push(i);
+}
+
+console.log(myArray)
+
+//Iterate Through an Array with a For Loop
