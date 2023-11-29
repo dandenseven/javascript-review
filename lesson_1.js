@@ -1203,3 +1203,40 @@ for (var i = 9; i > 0; i -= 2) {
 console.log(myArray)
 
 //Iterate Through an Array with a For Loop
+
+var ourArray = [9, 10, 11, 12];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArray.length; i++) {
+    ourTotal += ourArray[i];
+
+}
+
+console.log(ourTotal);
+
+var myArr = [2, 3, 4, 5, 6];
+var myTotal = 0;
+
+for (var i = 0; i < myArr.length; i++) {
+    myTotal += myArr[1];
+}
+
+console.log(myTotal);
+
+// Nesting for Loops
+
+function multiplyAll(arr) {
+    var product = 1;
+
+    for (var i = 0; i < arr.length; i++) {
+        for (var j=0; j < arr[1].length; j++) {
+            product *= arr[i][j];
+        }
+    }
+
+    return product;
+}
+
+var product = multiplyAll([[1,2], [3,4], [5,6,7]]);
+
+console.log(product);
