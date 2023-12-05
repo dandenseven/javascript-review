@@ -1240,3 +1240,29 @@ function multiplyAll(arr) {
 var product = multiplyAll([[1,2], [3,4], [5,6,7]]);
 
 console.log(product);
+
+// Iterate with Do... While Loops
+
+var myArray = [];
+var i = 10;
+
+// this is a while loop
+while (i < 5) {
+    myArray.push(i);
+    i++;
+}
+
+console.log(i, myArray);
+
+// this is a do while loop
+
+do {
+    myArray.push(i);
+    i++;
+}   while (i < 5)
+
+
+
+console.log(i, myArray);
+
+//Profile Lookup
