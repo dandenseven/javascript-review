@@ -1266,3 +1266,50 @@ do {
 console.log(i, myArray);
 
 //Profile Lookup
+ var contacts = [
+    {
+        "firstName": "Akiara",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "BrowniePoints"]
+
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "Unknown",
+        "likes": ["Javascript", "Gaming", "Foxes"]
+
+    }
+ ];
+ 
+
+ function lookUpProfile(name, prop) {
+    for (var i = 0; i < contacts.length; i++) {
+        if(contacts[i].firstName === name) {
+            return contacts[i][prop] || "No such property";
+        }
+    }
+    return "NO such contact";
+ }
+
+ // Change these values to test your funtion
+ var data = lookUpProfile("Sherlock", "Hello");
+
+ console.log(data);
+
+ // Generate Random Fractions
