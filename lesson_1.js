@@ -1313,3 +1313,21 @@ console.log(i, myArray);
  console.log(data);
 
  // Generate Random Fractions
+
+function randomFraction(){
+
+    return Math.random();
+}
+
+console.log(randomFraction());
+
+// Generate Random Whole Numbers
+
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+function randomWholeNum() {
+
+    return Math.random();
+}
+
+console.log(randomWholeNum());
