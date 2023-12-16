@@ -1321,7 +1321,7 @@ function randomFraction(){
 
 console.log(randomFraction());
 
-// Generate Random Whole Numbers
+//Generate Random Whole Numbers
 
 var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
 
@@ -1331,3 +1331,270 @@ function randomWholeNum() {
 }
 
 console.log(randomWholeNum());
+
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+function randomWholeNum() {
+
+    return Math.floor(Math.random() * 10);
+}
+
+console.log(randomWholeNum());
+
+// Generate Whole numbers within a Range
+
+function ourRandomRange(ourMin, ourMax) {
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+
+ourRandomRange(1, 9);
+
+function randomRange(myMin, myMax) {
+
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+
+var myRandom = randomRange(5, 15);
+
+console.log(myRandom);
+
+//Use the parseInt Function
+
+function convertToInteger(str) {
+    return parseInt(str);
+}
+
+convertToInteger("56");
+
+// console.log(numberToString);
+
+// Use the parseInt Function with a Radix
+
+function convertToInteger(str) {
+    return parseInt(str, 2)
+
+}
+
+convertToInteger("10011");
+
+// use the Ternary Operator
+
+// condition ? statement-if-true :statement-if-false;
+
+function checkEqual(a, b) {
+    if(a === b) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+checkEqual(1, 2);
+
+// Using the Termary Operator
+
+function checkEqual(a, b) {
+   return a === b ? true : false; // do not use ex. of ternary operator
+
+   return a === b; // better option
+}
+
+checkEqual(1, 2);
+
+// Use Multiple Conditional (Ternary) Operators
+
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+
+}
+
+console.log(checkSign(0));
+
+// Differences Bewteen the var and let Keywords
+// let onlu allows to declare a variable once
+
+let catName = "Quincy";
+let quote;
+
+// you can still define the variable more than once
+catName = "Beau";
+
+// use strict is often set at the top of full javascript file to catch coding errors
+function catTalk() {
+    "use strict";
+
+    catName = "Oliver";
+    quote = catName + " says Meow!";
+
+}
+
+catTalk();
+
+// Compare Scopes of the var and let Keywords
+
+function checkScope() {
+"use strict";
+    let i = "function scope";
+    if (true) {
+        i = "block scope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+}
+
+checkScope();
+
+// Declare a REad-Only Variable with the const Keyword
+
+function printManyTimes(str) {
+    "use strict";
+
+    const SENTENCE = str + " cool!";
+    
+
+    for (let i = 0; i < str.length; i+=2) {
+        console.log(SENTENCE);
+    }
+}
+
+printManyTimes("freeCodeCamp");
+
+// Mutate an Array Declared with const
+
+const s = [5, 7, 2];
+function editInPlace() {
+    "use strict";
+
+    //s = [2, 5, 7]; because const is use we can reassign the array
+    s[0] = 2;
+    s[1] = 5;
+    s[2] = 7;
+
+}
+editInPlace();
+
+console.log(s)
+
+// Prevent Object Mutation
+// object.freeze will prevent data mutation
+
+function freezeObj() {
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+
+    Object.freeze(MATH_CONSTANTS);
+    
+    try {
+        MATH_CONSTANTS.PI = 99;
+    } catch( ex ) {
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+const PI = freezeObj();
+
+console.log(PI)
+
+// Use Arrow Functions to Write Concise Anonymous Functions
+// Whenever you have an anonyomous function you can convert it into an arrow function =>
+
+// var magic = function() {
+//     return new Date();
+// };
+
+// using the Arrow function instead of Anonymous function
+const magic = () =>  new Date();
+
+// Write Arrow Functions with Parameters
+
+// var myConcat = function(arr1, arr2) {
+//     return arr1.concat(arr2);
+// };
+
+// console.log(myConcat([1, 2], [3, 4, 5]));
+
+// using the Arrow function 
+
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+
+// Write HIgher Order Arrow Functions
+// Arrow functions work really well with higher order functions such as map, filter and reduce.
+
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+const squareList = (arr) => {
+    const squaredIntegers = arr.filter(num => Number.isSafeInteger(num) && num > 0).map(x => x * x);
+    return squaredIntegers;
+};
+
+const squaredIntegers = squareList(realNumberArray) ;
+console.log(squaredIntegers);
+
+// Write Higher Order Arrow Functions
+
+const increment = (function() {
+    return function increment(number, value = 1) {
+        return number + value;
+    };
+})();
+console.log(increment(5, 2));
+console.log(increment(5));
+
+// Use the Rest Operator with Function Parameters - the rest operator is ...
+
+// const sum = (function() {
+//     return function sum(...args) {
+//         //const args = [x, y, z]; (since the rest operator is bein used dont need this line)
+//         return args.reduce((a, b) => a + b, 0);
+//     };
+// })();
+// console.log(sum(1, 2, 3, 4));
+
+// Use the Spread Operator to Evaluate Arrays In-Place
+// spread operator 
+
+const arr1 = ["JAN", "FEB", "MAR", "APR", "MAY"];
+let arr2;
+(function() {
+    arr2 = [...arr1]; // change this line
+    arr1[0] = 'potato'
+})();
+
+console.log(arr1);
+
+// USe Destructuring Assignment to Assign Variables from Objects
+
+var voxel = {x: 3.6, y: 7.4, z: 6.54 };
+
+var x = voxel.x; // x = 3.6
+var y = voxel.y; // y = 7.4
+var z = voxel.z; // z = 6.54
+
+const { x : a, y : b, z : c } = voxel; // a = 3.6, b = 7.4, c = 6.54
+
+const AVG_TEMPERATURES = {
+    today: 77.5,
+    tomorrow: 79
+};
+
+function getTempofTmrw(avgTemperatures) {
+    "use strict";
+    
+    const { tomorrow : tempOFTomorrow } = avgTemperatures;
+
+    return tempOFTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES));
+
+
+
+
+
