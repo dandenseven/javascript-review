@@ -1690,3 +1690,154 @@ function makeList(arr) {
 const resultDisplayArray = makeList(result.failure);
 
 console.log(resultDisplayArray)
+
+// Write Concise Object Liteal Declarations Using Simple Fields
+
+// const createPerson = (name, age, gender) => {
+    
+//     return {
+//         name: name,
+//         age: age,
+//         gender: gender
+//     };
+// };
+// console.log(createPerson("zodiac Hasbro", 56, "male"));
+
+//using simple fields
+
+const createPerson = (name, age, gender) => ({name, age, gender});
+console.log(createPerson("zodiac Hasbro", 56, "male"));
+
+
+// Write Concise Declarative Functions
+
+// const bicycle = {
+//     gear: 2,
+//     setGear: function(newGear) {
+//         "use strict";
+//         this.gear = newGear;
+//     }
+// };
+
+// bicycle.setGear(3);
+// console.log(bicycle.gear);
+
+//simpler way to put a function with an Object
+const bicycle = {
+    gear: 2,
+    setGear(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+// Use class Syntax to Define a Constructor Function
+
+// var SpaceShuttle = function(targetPlanet) {
+//     this.targetPlanet = targetPlanet;
+// }
+// var zeus = new SpaceShuttle('Jupiter');
+
+// console.log(zeus.targetPlanet)
+
+// Using a constructor
+
+
+
+class SpaceShuttle {
+    constructor(targetPlanet) {
+       this.targetPlanet = targetPlanet;
+    }
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+console.log(zeus.targetPlanet)
+
+
+function makeClass() {
+    class Vegetable{
+        constructor(name) {
+            this.name = name
+        }
+    }
+    return Vegetable;
+}
+const Vegetable = makeClass();
+const carrot = new Vegetable('carrot');
+console.log(carrot.name);
+
+// Use getters and setters to Control Acces to an Object
+
+class Book {
+    constructor(author){
+        this._author = author;
+    }
+    // getter
+    get writer(){
+        return this._author;
+    }
+    // setter
+    set writer(updatedAuthor){
+        this._author = updatedAuthor;
+
+    }
+}
+
+function makeClass() {
+    class Thermostat {
+        constructor(temp) {
+            this._temp = 5/9 * (temp - 32);
+        }
+        get temperature(){
+            return this._temp;
+        }
+        set temperature(updatedTemp){
+            this._temp = updatedTemp;
+        }
+    }
+    return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76);
+let temp = thermos.temperature;
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
+
+// Understand the Differences Between import and require
+// in string_function.js file we import capitalize function 
+// import { capitalizeString } from "./string_function"
+
+const cap = capitalizeString("hello");
+
+console.log(cap);
+
+// Use export to Reuse a Code Block
+
+const capitalizeString = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export { capitalizeString }; // export this funtion and the two variables below so can import to another file
+
+export const foo = "bar";
+export const bar = "foo"
+
+
+// Use * to import Everything from a File
+
+import * as capitalizeStrings from "capitalize_String";
+
+// Create an Export Fallback with export default
+
+export default function subtract(x,y) { return x -y;} // Often used if you only want to export one thing from a file
+
+// Import a Default Export
+
+import subtract from "math_functions"
+
+subtract(7,4);
